@@ -9,3 +9,13 @@ broken:
 		pandoc-citeproc-unprinted-reference-demo.md
 	latexmk -pdflatex="pdflatex --shell-escape %O %S" -pdf pandoc-citeproc-unprinted-reference-demo.tex
 
+working:
+	pandoc \
+		--from markdown \
+		--to latex \
+		--bibliography references.bib \
+		--csl plos.csl \
+		--output pandoc-citeproc-unprinted-reference-demo.tex \
+		--standalone \
+		pandoc-citeproc-unprinted-reference-demo.md
+	latexmk -pdflatex="pdflatex --shell-escape %O %S" -pdf pandoc-citeproc-unprinted-reference-demo.tex
